@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quickpic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css" />
+    <script type="module" src="src/helpers.js"></script>
+    <script type="module" src="src/api.js"></script>
+</head>
+<body> 
+    <header class="banner">
+        <h1>Quickpic</h1>
+        <div  id="bannerheadshot" >
+        </div>
+        <span id="bannerusername"></span>
+        <div><img src="src/icon-plus.svg" alt="add a post" role="add post button" id="bannernewpost"/></div>
+       
+        <ul class="nav">
+        </ul>
+    </header>
+    <main role="main">
+        <div  id="errorboard" ><!-- Error Board -->
+            <div class="Pop-board-ban"><button class="close-button"role="close"id="closebutt" ></button></div>
+            <div class="Pop-text-board"id="err_message"></div>
+        </div>
+        <div  id="commentsboard" ><!-- Show comments Board -->
+            <div class="Pop-board-ban"><button class="close-button"role="close"id="commentclosebutt" ></button></div>
+            <div class="Pop-text-board" id="comments_text"></div>
+        </div>
+        <div  id="addpostboard" ><!-- Add posts Board -->
+            <div class="Pop-board-ban"><button class="close-button"role="close"id="addpostclosebutt" ></button></div>
+            <div class="Pop-text-board"id="addpost_text">
+                <textarea id="posttext" name="post-text" rows="4" cols="50"placeholder="Write a caption(100 maximum characters)" autofocus  maxlength="200" wrap="hard"></textarea>
+                <div id="upload-photo"><img id="uploadphoto"alt="photo you choose" /></div> 
+                <div id="postinfo"></div>
+                <input id="choosephoto" type="file" name="Upload a photo here" value="pick a photo" />
+                <button class="post-butt" id="postbutton">Post</button>
+            </div>
+        </div>
+        <div  id="editprofileboard" ><!-- Edit profile Board -->
+            <div class="Pop-board-ban"><button class="close-button"role="close"id="editclosebutt" ></button></div>
+            <div class="Pop-text-board"id="edit_text">
+                <form name="Edit_form" >
+                    <label>name</label>
+                    <input name="new_name" type="text" />
+                    <label>Password</label>
+                    <input name="new_pass" type="password" />
+                    <label>email</label>
+                    <input name="new_email" type="text" />
+                    <input type="submit"  class="Welcomebutt" id ="edit_submit_button">
+                </form> 
+            </div>
+        </div>
+        <div  id="followingboard" ><!-- Show follownig Board -->
+            <div class="Pop-board-ban"><button class="close-button"role="close"id="followclosebutt" ></button></div>
+            <div class="Pop-text-board"id="followerboard">
+            </div>
+        </div>
+        <div class="initial-board" id= "initialboard"><!-- Welcome Board including login and signup -->
+            <div class="logboard" id="loginboard"><!-- Login Board  -->
+                <div id="logo"></div>
+                <form name="Login_form">
+                    <input name="login_name" type="text" placeholder="username"/>
+                    <input name="login_pass" type="password" placeholder="password"/>
+                    <input type="submit" value="Log In" class="Welcomebuttt" id ="login_button" >
+                </form>
+                    <button class="Welcomebutt" id="click_to_Signup">Don't have an account? Sign Up</button>
+            </div>
+            <div class="signboard"id="signupboard"><!-- Signup Board -->
+                <form name="Signup_form" >
+                    <label>Username</label>
+                    <input name="signup_username" type="text" />
+                    <label>Password</label>
+                    <input name="signup_pass1" type="password" />
+                    <label>Confirm Password</label>
+                    <input name="signup_pass2" type="password" />
+                    <label>email</label>
+                    <input name="signup_email" type="text" />
+                    <label>name</label>
+                    <input name="signup_name" type="text" />
+                    <input type="submit" value="Sign Up" class="Welcomebutt" id ="signup_button">
+                    
+                </form>
+                <button class="Welcomebutt" id="back_to_login">Back to login</button>
+            </div>
+        </div>
+        <div  class="feed-board" id= "feedboard">
+            <div class="personal-bar" id="personalbar">
+                <div  id="personalheadshot"></div>
+                <div  id="personalusername"></div>
+                <div  id="personalname"></div>
+                <div  id="personalemail"></div>
+                <div><img src="src/icon-plus.svg" alt="add a post" role="add post button" id="newpost"/></div>
+            </div>  
+            <div class="page-container" id="pagecontainer">
+                <p id="nofeed">You haven't followed anyone</p>
+                <div class="feed-container" id="feedcontainer">
+                </div>
+            </div>  
+        </div>
+        <div class="profile-board" id="profileboard">
+            <div class="profile-box" id="posterprofile">
+                <div class="profile-headshot" id="posterheadshot">
+                </div>
+                <div class="profile-username" id="posterusername"></div>
+                <div class="profile-email" id="posteremail"></div>
+                <div class="profile-name" id="postername"></div>
+                <div  class="followed-by" id="followedby"></div>
+                <button class="edit-profile" id="editprofilebutt">Edit Profile</button>
+                <button class="unfollow-poster" id ="unfollowbutton">unfollow</button>
+            </div>
+            <div>
+                <button class="edit-post-button" id="editpostbutton">Edit your Post</button>
+                <div class="poster-posts" id="posterposts"></div>
+                <p id="postempty">You don't have any posts</p>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
